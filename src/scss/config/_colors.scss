@@ -1,0 +1,21 @@
+$primary-hue: 265;
+$error-hue: 0;
+
+$light-mode-sat: 60%;
+$light-mode-light: 30%;
+
+$dark-mode-sat: 30%;
+$dark-mode-light: 60%;
+
+$primary-light: hsl($primary-hue, $light-mode-sat, $light-mode-light);
+$primary-dark: hsl($primary-hue, $dark-mode-sat, $dark-mode-light);
+
+$error-light: hsl($error-hue, $light-mode-sat, $light-mode-light);
+$error-dark: hsl($error-hue, $dark-mode-sat, $dark-mode-light);
+
+$low-sat: 8%;
+
+$background-color-light: hsl($primary-hue, $low-sat, 95%);
+$background-color-dark: hsl($primary-hue, $low-sat, 16%);
+$body-color-light: hsl($primary-hue, $low-sat, 20%);
+$body-color-dark: hsl($primary-hue, $low-sat, 85%);
