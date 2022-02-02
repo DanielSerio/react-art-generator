@@ -13,6 +13,7 @@ export interface AsideProps {
  * @returns {ReactElement} Aside Component
  */
 export default function Aside ({ darkmode, toggleDarkmode, toggleMenuOpen }: AsideProps) {
+  // TODO: add darkmode toggle
   return (
     <aside className="aside">
       <header className="aside-header">
