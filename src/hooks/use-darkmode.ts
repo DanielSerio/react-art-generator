@@ -38,7 +38,7 @@ export function useDarkmode (): UseDarkmode {
   const toggleDarkmode = useCallback(() => {
     setDarkmode(!darkmode)
     setLSDarkmode(!darkmode)
-  }, [setDarkmode, setLSDarkmode])
+  }, [setDarkmode, setLSDarkmode, darkmode])
 
   return {
     darkmode,

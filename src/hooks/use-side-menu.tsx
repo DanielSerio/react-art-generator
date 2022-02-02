@@ -17,7 +17,7 @@ export function useSideMenu (): UseSideMenu {
    */
   const toggleMenuOpen = useCallback(() => {
     setMenuIsOpen(!menuIsOpen)
-  }, [setMenuIsOpen])
+  }, [setMenuIsOpen, menuIsOpen])
 
   return {
     menuIsOpen,

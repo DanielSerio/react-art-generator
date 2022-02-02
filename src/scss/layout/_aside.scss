@@ -1,0 +1,19 @@
+.aside {
+  width: $aside-tab-width-px;
+  position: relative;
+  transition: all 80ms ease-out;
+  overflow: hidden;
+
+  & > .aside-container {
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    width: calc(100% - $aside-tab-width-px);
+    margin-right: $aside-tab-width-px;
+    overflow-x: hidden;
+  }
+}
+
+.app.menu-open > .aside {
+  width: $aside-width-px;
+}

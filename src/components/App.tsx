@@ -10,8 +10,8 @@ import Header from './layout/Header'
  * @returns {ReactElement} App Component
  */
 export default function App () {
-  const { darkmode } = useDarkmode()
-  const { menuIsOpen } = useSideMenu()
+  const { darkmode, toggleDarkmode } = useDarkmode()
+  const { menuIsOpen, toggleMenuOpen } = useSideMenu()
 
   /**
    * Concats classNames with 'menu-open' state.
@@ -22,7 +22,7 @@ export default function App () {
   return (
     <div data-darkmode={darkmode} className={classNames()}>
       <Header />
-      <Aside />
+      <Aside darkmode={darkmode} toggleDarkmode={toggleDarkmode} toggleMenuOpen={toggleMenuOpen} />
       <Content />
       <Footer />
     </div>
