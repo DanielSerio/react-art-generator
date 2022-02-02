@@ -1,0 +1,16 @@
+input,
+button,
+textarea,
+select {
+  appearance: none;
+  outline: none;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  background: transparent;
+}
+
+button { 
+  border: none; 
+  line-height: 2;
+}

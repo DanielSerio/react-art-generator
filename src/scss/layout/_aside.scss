@@ -4,6 +4,12 @@
   transition: all 80ms ease-out;
   overflow: hidden;
 
+  & > .aside-header { 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
   & > .aside-container {
     display: flex;
     flex-direction: column; 

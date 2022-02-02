@@ -1,0 +1,5 @@
+.app .btn:not(:disabled).btn-minimal {
+  transition: all 80ms ease-out;
+
+  &:hover { background-color: rgb(241, 241, 241); }
+}

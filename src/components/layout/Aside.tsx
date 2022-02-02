@@ -1,4 +1,5 @@
 import React from 'react'
+import MenuButton from '../buttons/MenuButton'
 
 export interface AsideProps {
   darkmode: boolean
@@ -14,7 +15,9 @@ export interface AsideProps {
 export default function Aside ({ darkmode, toggleDarkmode, toggleMenuOpen }: AsideProps) {
   return (
     <aside className="aside">
-      <header className="aside-header" onClick={toggleMenuOpen}>menu</header>
+      <header className="aside-header">
+        <MenuButton onClick={toggleMenuOpen} />
+      </header>
       <section className="aside-container" >
         aside
       </section>
