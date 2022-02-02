@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+html,
+body,
+.root,
+.app { overflow: hidden; }
+
+
+.root,
+.app { 
+  position: relative; 
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+.root { place-items: center; }
+
+.app {
+  grid-template-columns: $aside-tab-width-px 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  .header { grid-row: 1; }
+  .content { grid-row: 2; }
+  .footer { grid-row: 3; }
+
+  .header,
+  .footer,
+  .content { grid-column: 2; }
+
+  .aside {
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+}
+
+.app.menu-open {
+  grid-template-columns: $aside-width-px 1fr;
+}

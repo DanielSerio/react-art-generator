@@ -1,0 +1,9 @@
+$aside-width: 320;
+$aside-tab-width: 32;
+$aside-content-width: $aside-width - $aside-tab-width;
+
+$aside-width-px: $aside-width * 1px;
+$aside-tab-width-px: $aside-tab-width * 1px;
+$aside-content-width-px: $aside-content-width * 1px;
+
+$content-container-margin: 2ch;
