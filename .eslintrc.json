@@ -23,6 +23,8 @@
     "rules": {
         "indent": "off",
         "linebreak-style": "off",
-        "semi": [2, "never"]
+        "semi": [2, "never"],
+        "no-use-before-define": "off",
+        "no-unused-vars": "off"
     }
 }
