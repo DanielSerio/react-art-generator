@@ -8,7 +8,7 @@ export default function Header () {
   return (
     <header className="header">
       <section className="header-container container">
-        Header
+        <h1><span>React</span> Art Generator</h1>
       </section>
     </header>
   )

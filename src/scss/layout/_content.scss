@@ -8,5 +8,12 @@
     height: calc(100% - $margin);
     display: grid;
     place-items: center;
+    position: relative;
+    overflow: hidden;
+
+    canvas {
+      max-height: 99%;
+      width: auto;
+    }
   }
 }

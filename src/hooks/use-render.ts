@@ -3,11 +3,6 @@ import { getPoints } from '../lib/Point'
 import { generateShapes } from '../lib/Shape'
 import { ShapeGeneratorParams, ShapeProps } from '../lib/Shape/types'
 
-export interface UseRender {
-  isLoading: boolean
-  renderError: string|null
-}
-
 function renderShape (ctx: CanvasRenderingContext2D, shape: ShapeProps): void {
   const { PI, random } = Math
   ctx.save()
@@ -31,15 +26,12 @@ function renderShape (ctx: CanvasRenderingContext2D, shape: ShapeProps): void {
  * hook that generate shapes and renders them to the canvas. Returns loading and error state.
  * @param {RefObject<HTMLCanvasElement>} ref - A reference to the canvas element.
  * @param {ShapeGeneratorParams} params - {@link ShapeGeneratorParams}
- * @returns {UseRender} {@link UseRender}
+ * @returns {void} None
  */
-export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGeneratorParams|null): UseRender {
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-  const [renderError, setRenderError] = useState<null|string>(null)
-
+export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGeneratorParams|null): void {
   useEffect(() => {
     if (ref && params) {
-      new Promise((resolve) => {
+      const promise = new Promise((resolve) => {
         if (ref && ref.current) {
         const ctx = ref.current.getContext('2d') as CanvasRenderingContext2D
         const { width, height } = ctx.canvas
@@ -48,19 +40,6 @@ export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGener
       }
         resolve(false)
       })
-        .then(() => {
-          setRenderError(null)
-          setIsLoading(false)
-        })
-        .catch((e: Error) => {
-          setIsLoading(false)
-          setRenderError(e.message)
-        })
     }
   }, [params, ref])
-
-  return {
-    isLoading,
-    renderError
-  }
 }

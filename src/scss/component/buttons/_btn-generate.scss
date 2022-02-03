@@ -1,4 +1,4 @@
-.btn.btn-submit.btn-generate {
+.root > .app .btn.btn-submit.btn-generate {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,4 +8,8 @@
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0 1ch;
+  background-color: $primary-dark;
+  color: $aside-background-color;
+
+  &:hover { background: $primary-dark-hover; }
 }

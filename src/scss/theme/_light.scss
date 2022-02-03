@@ -3,5 +3,11 @@
   color: $body-color-light;
 
 
+  & > .header h1 {
+    color: #666;
+
+    span { color: $primary-light; }
+  }
+
   & > .footer { color: $body-color-muted-light; }
 }

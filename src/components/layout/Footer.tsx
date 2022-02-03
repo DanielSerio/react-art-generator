@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../../context'
 import DownloadButton from '../buttons/DownloadButton'
 
 /**
@@ -6,10 +7,12 @@ import DownloadButton from '../buttons/DownloadButton'
  * @returns {ReactElement} Footer Component
  */
 export default function Footer () {
+  const { renderParams } = useContext(AppContext)
+
   return (
     <footer className="footer">
       <section className="container footer-container">Dan Serio</section>
-      <DownloadButton disabled={true}/>
+      <DownloadButton disabled={renderParams === null}/>
     </footer>
   )
 }
