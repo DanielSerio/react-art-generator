@@ -2,6 +2,12 @@
 
 An abstract art generator user interface built with React.
 
+
+![light-screenshot](./src/public/light-screenshot.png)
+
+
+![dark-screenshot](./src/public/dark-screenshot.png)
+
 ## Tools used:
 
   - Typescript
