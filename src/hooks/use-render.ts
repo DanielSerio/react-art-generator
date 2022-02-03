@@ -28,7 +28,7 @@ function renderShape (ctx: CanvasRenderingContext2D, shape: ShapeProps): void {
  * @param {ShapeGeneratorParams} params - {@link ShapeGeneratorParams}
  * @returns {void} None
  */
-export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGeneratorParams|null): void {
+export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGeneratorParams|null, setSource: (value: string|null) => void): void {
   useEffect(() => {
     if (ref && params) {
       const promise = new Promise((resolve) => {
@@ -39,6 +39,13 @@ export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGener
         generateShapes(params, (shape: ShapeProps) => renderShape(ctx, shape))
       }
         resolve(false)
+      })
+
+      promise.then(() => {
+        setSource((ref.current as HTMLCanvasElement).toDataURL())
+      })
+      .catch(() => {
+        setSource(null)
       })
     }
   }, [params, ref])

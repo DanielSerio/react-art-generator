@@ -1,4 +1,5 @@
 import React from 'react'
+import { ImgSrcProvider } from '../context/ImgSrcContext'
 import { useDarkmode, useSideMenu } from '../hooks'
 import Aside from './layout/Aside'
 import Content from './layout/Content'
@@ -20,11 +21,13 @@ export default function App () {
   const classNames = (): string => `app ${menuIsOpen ? 'menu-open' : ''}`.trimEnd()
 
   return (
-    <div data-darkmode={darkmode} className={classNames()}>
-      <Header />
-      <Aside darkmode={darkmode} toggleDarkmode={toggleDarkmode} toggleMenuOpen={toggleMenuOpen} />
-      <Content />
-      <Footer />
-    </div>
+    <ImgSrcProvider>
+      <div data-darkmode={darkmode} className={classNames()}>
+        <Header />
+        <Aside darkmode={darkmode} toggleDarkmode={toggleDarkmode} toggleMenuOpen={toggleMenuOpen} />
+        <Content />
+        <Footer />
+      </div>
+    </ImgSrcProvider>
   )
 }

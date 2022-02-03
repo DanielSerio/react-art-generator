@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Controller, FieldError, useForm, ControllerRenderProps } from 'react-hook-form'
-import FormControl, { FormControlProps } from './FormControl'
+import FormControl from './FormControl'
 import RCSlider, { createSliderWithTooltip } from 'rc-slider'
 import SwatchView from '../controls/SwatchView'
 import { ChromePicker } from 'react-color'

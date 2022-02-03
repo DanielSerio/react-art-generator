@@ -3,6 +3,12 @@
   border-radius: 4px 0 0 0;
   font-weight: bold;
 
+  a {
+    display: block;
+    height: 100%;
+    color: inherit;
+  }
+
   span:first-child { 
     margin-right: 2ch; 
     display: inline-block;
