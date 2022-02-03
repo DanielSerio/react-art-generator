@@ -14,9 +14,13 @@
     display: flex;
     flex-direction: column; 
     height: 100%; 
-    width: calc(100% - $aside-tab-width-px);
-    margin-right: $aside-tab-width-px;
+    width: 100%;
     overflow-x: hidden;
+
+    & > .form-container { 
+      margin-right: $aside-tab-width-px; 
+      width: calc(100% - $aside-tab-width-px);
+    }
   }
 }
 

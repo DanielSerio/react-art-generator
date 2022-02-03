@@ -1,4 +1,5 @@
 import React from 'react'
+import DarkmodeButton from '../buttons/DarkmodeButton'
 import MenuButton from '../buttons/MenuButton'
 
 export interface AsideProps {
@@ -20,7 +21,10 @@ export default function Aside ({ darkmode, toggleDarkmode, toggleMenuOpen }: Asi
         <MenuButton onClick={toggleMenuOpen} />
       </header>
       <section className="aside-container" >
-        aside
+        <DarkmodeButton darkmode={darkmode} toggleDarkmode={toggleDarkmode} />
+        <div className="form-container">
+
+        </div>
       </section>
     </aside>
   )

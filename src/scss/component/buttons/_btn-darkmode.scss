@@ -1,0 +1,16 @@
+.app:not(.menu-open) .btn.btn-darkmode {
+
+  align-items: center;
+  justify-content: center;
+  max-height: $aside-tab-width-px;
+
+  span:first-child { display: none; }
+  span:last-child { width: $aside-tab-width-px; }
+}
+
+.btn.btn-darkmode {
+  justify-content: space-between;
+  display: flex;
+  padding: 0 0.75ch;
+  border-bottom: 0.05rem solid $aside-border-color;
+}

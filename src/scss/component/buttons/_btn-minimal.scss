@@ -3,3 +3,13 @@
 
   &:hover { background-color: rgb(241, 241, 241); }
 }
+
+.app[data-darkmode="true"] .btn:not(:disabled).btn-minimal {
+  transition: all 80ms ease-out;
+
+  &:hover { background-color: hsl(265, 8%, 26%); }
+}
+
+.app > .aside .btn:not(:disabled).btn-minimal {
+  &:hover { background-color: hsl(265, 8%, 26%); }
+}

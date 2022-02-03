@@ -1,2 +1,10 @@
 @import './light';
 @import './dark';
+
+
+.app .aside {
+  background-color: $aside-background-color;
+  color: $aside-color;
+
+  & > header { border-bottom: 0.05rem solid $aside-border-color; }
+}

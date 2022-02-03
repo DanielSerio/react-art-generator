@@ -1,5 +1,5 @@
 import React, { ComponentProps, ReactElement } from 'react'
-import { HiMenu } from 'react-icons/hi'
+import { IoIosArrowForward } from 'react-icons/io'
 
 export type MenuButtonProps = ComponentProps<'button'>
 
@@ -11,7 +11,7 @@ export type MenuButtonProps = ComponentProps<'button'>
 export default function MenuButton ({ ...props }: MenuButtonProps) {
   return (
     <button className="btn btn-minimal btn-menu" {...props}>
-      <HiMenu />
+      <IoIosArrowForward />
     </button>
   )
 }

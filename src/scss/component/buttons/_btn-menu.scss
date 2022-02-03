@@ -2,3 +2,7 @@
   height: $aside-tab-width-px;
   width: $aside-tab-width-px;
 }
+
+.app.menu-open .btn.btn-menu {
+  transform: rotate(180deg);
+}
