@@ -1,6 +1,7 @@
 .footer {
   position: relative;
   display: flex;
+  align-items: flex-end;
 
 
   & > .footer-container { 
@@ -8,5 +9,6 @@
     margin-right: 1rem;
     font-size: 0.8rem;
     text-align: center; 
+    padding-bottom: 1ch;
   }
 }

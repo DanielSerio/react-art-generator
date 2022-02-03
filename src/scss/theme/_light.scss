@@ -1,4 +1,7 @@
 .app[data-darkmode="false"] {
   background-color: $background-color-light;
   color: $body-color-light;
+
+
+  & > .footer { color: $body-color-muted-light; }
 }
