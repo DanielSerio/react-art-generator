@@ -60,7 +60,7 @@ export default function MainForm () {
   }
 
   const onSubmit = (formData: MainFormParams) => {
-    console.log(formData)
+    console.log({ ...formData, colors: userColors })
   }
 
   return (
