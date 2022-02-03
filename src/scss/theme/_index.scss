@@ -2,6 +2,22 @@
 @import './dark';
 
 
+.app .form-control .rc-slider {
+  & > .rc-slider-rail { background-color: hsl($primary-hue, 8%, 11%); }
+
+  & > .rc-slider-handle {
+    background-color: $aside-background-color;
+    border: solid 2px $primary-dark;
+  }
+
+  & > .rc-slider-track { background-color: $primary-dark; }
+
+  &:hover > .rc-slider-rail { background-color: hsl($primary-hue, 12%, 8%); }
+
+  &:hover > .rc-slider-track { background-color: $primary-dark-hover; }
+}
+
+
 .app .aside {
   background-color: $aside-background-color;
   color: $aside-color;
@@ -14,3 +30,5 @@
 
   & > header { border-bottom: 0.05rem solid $aside-border-color; }
 }
+
+.form-control .slider-area span { color: $aside-legend-color; }

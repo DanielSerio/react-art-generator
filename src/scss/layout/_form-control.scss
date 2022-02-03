@@ -26,3 +26,18 @@
 .form-control > .label {
   font-size: 0.8rem;
 }
+
+.form-control .slider-area {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  
+  span {
+    display: inline-block;
+    border: 1px solid;
+    margin-left: 2ch;
+    padding: 0.5ch 1ch;
+    border-radius: 4px;
+  }
+
+}
