@@ -15,11 +15,13 @@
     flex-direction: column; 
     height: 100%; 
     width: 100%;
+    position: relative;
     overflow-x: hidden;
 
     & > .form-container { 
       margin-right: $aside-tab-width-px; 
       width: calc(100% - $aside-tab-width-px);
+      height: 100%;
     }
   }
 }

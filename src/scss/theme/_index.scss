@@ -6,5 +6,11 @@
   background-color: $aside-background-color;
   color: $aside-color;
 
+  fieldset {
+    border-color: $aside-fieldset-border-color;
+
+    legend { color: $aside-legend-color; }
+  }
+
   & > header { border-bottom: 0.05rem solid $aside-border-color; }
 }
