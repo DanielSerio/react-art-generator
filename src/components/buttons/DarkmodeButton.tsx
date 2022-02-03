@@ -12,7 +12,7 @@ export interface DarkmodeProps {
  */
 export default function DarkmodeButton ({ darkmode, toggleDarkmode }: DarkmodeProps) {
   return (
-    <button className="btn btn-minimal btn-darkmode" onClick={toggleDarkmode}>
+    <button type="button" className="btn btn-minimal btn-darkmode" onClick={toggleDarkmode}>
       <span>Darkmode</span>
       <span>
         {darkmode ? <BsFillMoonFill /> : <BsFillSunFill />}

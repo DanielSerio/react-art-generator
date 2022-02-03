@@ -8,7 +8,9 @@ $dark-mode-sat: 30%;
 $dark-mode-light: 60%;
 
 $primary-light: hsl($primary-hue, $light-mode-sat, $light-mode-light);
+$primary-light-hover: hsl($primary-hue, 80%, 35%);
 $primary-dark: hsl($primary-hue, $dark-mode-sat, $dark-mode-light);
+$primary-dark-hover: hsl($primary-hue, 50%, 65%);
 
 $error-light: hsl($error-hue, $light-mode-sat, $light-mode-light);
 $error-dark: hsl($error-hue, $dark-mode-sat, $dark-mode-light);

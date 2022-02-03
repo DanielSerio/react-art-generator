@@ -1,4 +1,5 @@
 import React from 'react'
+import DownloadButton from '../buttons/DownloadButton'
 
 /**
  * Main Footer Component.
@@ -8,7 +9,7 @@ export default function Footer () {
   return (
     <footer className="footer">
       <section className="container footer-container">Footer</section>
-      <span>Button Area</span>
+      <DownloadButton disabled={true}/>
     </footer>
   )
 }

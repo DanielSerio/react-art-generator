@@ -1,0 +1,17 @@
+.app[data-darkmode="false"] .btn:not(:disabled).btn-submit {
+  background-color: $primary-light;
+  color: $body-color-dark;
+
+  &:hover { background-color: $primary-light-hover; }
+}
+
+.app[data-darkmode="true"] .btn:not(:disabled).btn-submit {
+  background-color: $primary-dark;
+  color: $body-color-light;
+
+  &:hover { background-color: $primary-dark-hover; }
+}
+
+.btn.btn-submit {
+  padding: 0 2ch;
+}

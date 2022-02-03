@@ -10,7 +10,7 @@ export type MenuButtonProps = ComponentProps<'button'>
  */
 export default function MenuButton ({ ...props }: MenuButtonProps) {
   return (
-    <button className="btn btn-minimal btn-menu" {...props}>
+    <button type="button" className="btn btn-minimal btn-menu" {...props}>
       <IoIosArrowForward />
     </button>
   )

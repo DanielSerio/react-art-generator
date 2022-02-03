@@ -1,0 +1,10 @@
+.btn.btn-submit.btn-download {
+  padding: 1ch 2ch;
+  border-radius: 4px 0 0 0;
+  font-weight: bold;
+
+  span:first-child { 
+    margin-right: 2ch; 
+    display: inline-block;
+  }
+}
