@@ -1,0 +1,12 @@
+.btn.btn-outline {
+  border: 2px solid;
+  border-radius: 4px;
+  background-color: transparent;
+  border-color: $aside-legend-color;
+  color: $aside-legend-color;
+
+  &:hover {
+    background-color: $primary-dark;
+    color: $aside-background-color;
+  }
+}

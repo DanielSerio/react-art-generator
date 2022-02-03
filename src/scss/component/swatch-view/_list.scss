@@ -6,4 +6,11 @@
   padding: 0;
   margin: 2rem auto 1rem auto;
   width: 235px;
+
+  & > span { 
+    grid-column: 1 / 9; 
+    font-size: 0.8rem;
+    text-align: center;
+    color: $error-dark;
+  }
 }

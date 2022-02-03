@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Controller, FieldError, useForm, ControllerRenderProps } from 'react-hook-form'
 import FormControl, { FormControlProps } from './FormControl'
 import RCSlider, { createSliderWithTooltip } from 'rc-slider'
 import SwatchView from '../controls/SwatchView'
 import { ChromePicker } from 'react-color'
+import AddColorButton from '../buttons/AddColorButton'
+import GenerateButton from '../buttons/GenerateButton'
 
 export interface MainFormParams {
   height: number
@@ -17,6 +19,8 @@ export interface MainFormParams {
 export type RequiredFieldParams = [keyof MainFormParams, { required: string }]
 
 export default function MainForm () {
+  const [userColor, setUserColor] = useState<string>('#80ed99')
+  const [userColors, setUserColors] = useState<string[]>(['#782de1', '#80ed99', '#f2545b', '#343432'])
   const { register, handleSubmit, control, formState: { errors } } = useForm<MainFormParams>({
     mode: 'onBlur',
     defaultValues: {
@@ -41,8 +45,26 @@ export default function MainForm () {
     }
   }
 
+  const addColor = () => {
+    if (!userColors.includes(userColor)) {
+      setUserColors([...userColors, userColor])
+    }
+  }
+
+  const removeColor = (color: string) => {
+    if (userColors.includes(color)) {
+      const copy = [...userColors]
+      copy.splice(copy.indexOf(color), 1)
+      setUserColors(copy)
+    }
+  }
+
+  const onSubmit = (formData: MainFormParams) => {
+    console.log(formData)
+  }
+
   return (
-    <form className="form form-main">
+    <form className="form form-main" onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
         <legend>Dimensions</legend>
         <FormControl labelText='Height' inline error={message('height')}>
@@ -105,9 +127,11 @@ export default function MainForm () {
       </fieldset>
       <fieldset>
         <legend>Colors</legend>
-        <ChromePicker className='color-picker picker'/>
-        <SwatchView colors={['cyan', 'yellow', 'magenta']} removeColor={() => {}}/>
+        <ChromePicker color={userColor} onChange={(color) => setUserColor(color.hex)} className='color-picker picker'/>
+        <AddColorButton onClick={addColor}/>
+        <SwatchView colors={userColors} removeColor={removeColor}/>
       </fieldset>
+      <GenerateButton disabled={Boolean(userColors.length === 0) || Boolean(errors && (errors.height || errors.width))}/>
     </form>
   )
 }
