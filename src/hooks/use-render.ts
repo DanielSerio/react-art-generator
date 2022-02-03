@@ -20,6 +20,8 @@ function renderShape (ctx: CanvasRenderingContext2D, shape: ShapeProps): void {
   ctx.moveTo(...points[0])
   for (let i = 1; i < points.length; i += 1) ctx.lineTo(...points[i])
   ctx.lineTo(...points[0])
+  ctx.filter = 'drop-shadow(0 0 8px #11111177)'
+  ctx.globalCompositeOperation = 'color'
   ctx.fill()
   ctx.closePath()
   ctx.restore()
@@ -31,26 +33,30 @@ function renderShape (ctx: CanvasRenderingContext2D, shape: ShapeProps): void {
  * @param {ShapeGeneratorParams} params - {@link ShapeGeneratorParams}
  * @returns {UseRender} {@link UseRender}
  */
-export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGeneratorParams): UseRender {
+export function useRender (ref: RefObject<HTMLCanvasElement>, params: ShapeGeneratorParams|null): UseRender {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [renderError, setRenderError] = useState<null|string>(null)
 
   useEffect(() => {
-    new Promise((resolve) => {
-      generateShapes(params, (shape: ShapeProps) => {
-        if (ref && ref.current) renderShape(ref.current.getContext('2d') as CanvasRenderingContext2D, shape)
+    if (ref && params) {
+      new Promise((resolve) => {
+        if (ref && ref.current) {
+        const ctx = ref.current.getContext('2d') as CanvasRenderingContext2D
+        const { width, height } = ctx.canvas
+        ctx.clearRect(0, 0, width, height)
+        generateShapes(params, (shape: ShapeProps) => renderShape(ctx, shape))
+      }
+        resolve(false)
       })
-
-      resolve(false)
-    })
-      .then(() => {
-        setRenderError(null)
-        setIsLoading(false)
-      })
-      .catch((e: Error) => {
-        setIsLoading(false)
-        setRenderError(e.message)
-      })
+        .then(() => {
+          setRenderError(null)
+          setIsLoading(false)
+        })
+        .catch((e: Error) => {
+          setIsLoading(false)
+          setRenderError(e.message)
+        })
+    }
   }, [params, ref])
 
   return {

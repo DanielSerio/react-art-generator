@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Controller, FieldError, useForm, ControllerRenderProps } from 'react-hook-form'
 import FormControl, { FormControlProps } from './FormControl'
 import RCSlider, { createSliderWithTooltip } from 'rc-slider'
@@ -6,6 +6,7 @@ import SwatchView from '../controls/SwatchView'
 import { ChromePicker } from 'react-color'
 import AddColorButton from '../buttons/AddColorButton'
 import GenerateButton from '../buttons/GenerateButton'
+import { AppContext } from '../../context'
 
 export interface MainFormParams {
   height: number
@@ -21,11 +22,12 @@ export type RequiredFieldParams = [keyof MainFormParams, { required: string }]
 export default function MainForm () {
   const [userColor, setUserColor] = useState<string>('#80ed99')
   const [userColors, setUserColors] = useState<string[]>(['#782de1', '#80ed99', '#f2545b', '#343432'])
+  const { setRenderParams } = useContext(AppContext)
   const { register, handleSubmit, control, formState: { errors } } = useForm<MainFormParams>({
     mode: 'onBlur',
     defaultValues: {
-      height: 500,
-      width: 350,
+      height: 350,
+      width: 500,
       count: 250,
       radius: [96, 150],
       numPoints: [5, 16],
@@ -60,7 +62,8 @@ export default function MainForm () {
   }
 
   const onSubmit = (formData: MainFormParams) => {
-    console.log({ ...formData, colors: userColors })
+    const { height, width, ...rest } = formData
+    setRenderParams({ dimensions: [width, height], ...rest, colors: userColors })
   }
 
   return (

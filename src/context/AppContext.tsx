@@ -6,7 +6,7 @@ export interface AppContextParams {
   setRenderParams: Dispatch<SetStateAction<null|ShapeGeneratorParams>>
 }
 
-const AppContext = createContext<AppContextParams>({
+export const AppContext = createContext<AppContextParams>({
   renderParams: null,
   setRenderParams: () => {}
 })

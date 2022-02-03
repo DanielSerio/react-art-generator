@@ -1,4 +1,5 @@
 import React from 'react'
+import Canvas from '../Canvas'
 
 /**
  * Main Content Component.
@@ -8,7 +9,7 @@ export default function Content () {
   return (
     <main className="content">
       <section className="container content-container">
-        Content
+        <Canvas />
       </section>
     </main>
   )
