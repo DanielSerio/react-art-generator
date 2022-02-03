@@ -1,0 +1,9 @@
+.form-control:not(.error) > input {
+  &:hover { border-color: $aside-input-border-hover-color; }
+
+  &:focus { border-color: $primary-dark; }
+}
+
+.form-control.error > input { border-color: $error-dark; }
+
+.form-control.error > .label { color: $error-dark; }

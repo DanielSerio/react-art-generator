@@ -4,13 +4,25 @@ textarea,
 select {
   appearance: none;
   outline: none;
-  font-size: inherit;
   color: inherit;
   font-family: inherit;
   background: transparent;
 }
 
+input {
+  border-width: 0.05rem;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 2;
+  font-size: 0.8rem;
+  padding: 0 1ch;
+  border-color: $aside-input-border-color;
+}
+
 button { 
   border: none; 
   line-height: 2;
+  font-size: inherit;
 }
+
+input[type=number] { appearance: textfield; }
