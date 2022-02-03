@@ -1,0 +1,35 @@
+.swatch-view .swatch {
+  position: relative;
+
+  span.remove {
+    position: absolute;
+
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    top: -7px;
+    left: -7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #222;
+    background: black;
+    color: white;
+  }
+
+  div,
+  span.remove { transition: all 80ms ease-out; }
+
+  div {
+    height: 25px;
+    width: 25px;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 7px -1px black;
+  }
+
+  &:hover {
+    div { box-shadow: 0 0 0 2px white; }
+
+    span.remove { border-color: white; }
+  }
+}

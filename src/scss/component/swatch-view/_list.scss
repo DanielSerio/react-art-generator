@@ -1,0 +1,9 @@
+.swatch-view {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(8, 25px);
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto 1rem auto;
+  width: 235px;
+}

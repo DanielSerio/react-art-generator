@@ -2,6 +2,8 @@ import React from 'react'
 import { Controller, FieldError, useForm, ControllerRenderProps } from 'react-hook-form'
 import FormControl, { FormControlProps } from './FormControl'
 import RCSlider, { createSliderWithTooltip } from 'rc-slider'
+import SwatchView from '../controls/SwatchView'
+import { ChromePicker } from 'react-color'
 
 export interface MainFormParams {
   height: number
@@ -100,6 +102,11 @@ export default function MainForm () {
             }
           }/>
         </FormControl>
+      </fieldset>
+      <fieldset>
+        <legend>Colors</legend>
+        <ChromePicker className='color-picker picker'/>
+        <SwatchView colors={['cyan', 'yellow', 'magenta']} removeColor={() => {}}/>
       </fieldset>
     </form>
   )

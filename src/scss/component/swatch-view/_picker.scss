@@ -1,0 +1,19 @@
+body > #root.root > .app .color-picker.chrome-picker.picker {
+  margin: 1rem auto;
+  background-color: hsl($primary-hue, 8%, 18%) !important;
+  font-family: inherit !important;
+  box-shadow: none !important;
+  
+  input {
+    color: white !important;
+    border: 0.05rem solid $aside-legend-color !important;
+    box-shadow: none !important;
+  }
+
+  svg { fill: #ddd !important; }
+
+  svg:hover {
+    fill: white !important;
+    background-color: #333 !important;
+  }
+}
