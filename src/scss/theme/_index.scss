@@ -8,6 +8,11 @@
   & > .rc-slider-handle {
     background-color: $aside-background-color;
     border: solid 2px $primary-dark;
+
+    &.rc-slider-handle-dragging.rc-slider-handle-1,
+    &.rc-slider-handle-dragging.rc-slider-handle-1 {
+      box-shadow: 0 0 0 2px $primary-dark;
+    }
   }
 
   & > .rc-slider-track { background-color: $primary-dark; }
@@ -32,3 +37,9 @@
 }
 
 .form-control .slider-area span { color: $aside-legend-color; }
+
+.form-control .label .helper { 
+  color: $aside-legend-color;
+  margin-left: 1ch;
+  font-size: 0.7em;
+}

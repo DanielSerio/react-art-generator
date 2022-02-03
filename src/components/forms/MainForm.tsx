@@ -7,6 +7,9 @@ export interface MainFormParams {
   height: number
   width: number
   count: number
+  radius: [number, number]
+  numPoints: [number, number]
+  maxOffset: number
 }
 
 export type RequiredFieldParams = [keyof MainFormParams, { required: string }]
@@ -17,7 +20,10 @@ export default function MainForm () {
     defaultValues: {
       height: 500,
       width: 350,
-      count: 250
+      count: 250,
+      radius: [96, 150],
+      numPoints: [5, 16],
+      maxOffset: 16
     }
   })
   const Slider = createSliderWithTooltip(RCSlider)
@@ -53,6 +59,42 @@ export default function MainForm () {
                 <div className="slider-area">
                   <Slider ref={ref} min={64} max={600} value={value} onChange={onChange} />
                   <span className="slider-display">{value}</span>
+                </div>
+              )
+            }
+          }/>
+        </FormControl>
+        <FormControl labelText='Radius' labelHelper='(min/max)'>
+          <Controller name="radius" control={control} render={
+            ({ field: { onChange, value, ref } }: { field: ControllerRenderProps<MainFormParams, 'radius'>}) => {
+              return (
+                <div className="slider-area">
+                  <Range ref={ref} min={16} max={250} value={value} onChange={onChange} />
+                  <span className="slider-display">{value.toString()}</span>
+                </div>
+              )
+            }
+          }/>
+        </FormControl>
+        <FormControl labelText='Shape Points' labelHelper='(min/max)'>
+          <Controller name="numPoints" control={control} render={
+            ({ field: { onChange, value, ref } }: { field: ControllerRenderProps<MainFormParams, 'numPoints'>}) => {
+              return (
+                <div className="slider-area">
+                  <Range ref={ref} min={3} max={32} value={value} onChange={onChange} />
+                  <span className="slider-display">{value.toString()}</span>
+                </div>
+              )
+            }
+          }/>
+        </FormControl>
+        <FormControl labelText='Max Point Offset'>
+          <Controller name="maxOffset" control={control} render={
+            ({ field: { onChange, value, ref } }: { field: ControllerRenderProps<MainFormParams, 'maxOffset'>}) => {
+              return (
+                <div className="slider-area">
+                  <Slider ref={ref} min={3} max={32} value={value} onChange={onChange} />
+                  <span className="slider-display">{value.toString()}</span>
                 </div>
               )
             }
